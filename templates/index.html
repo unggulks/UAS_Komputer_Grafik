@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Crop App</title>
+</head>
+<body>
+    <h1>Image Crop App</h1>
+    <h2>Unggul Prasetyo Utomo - 201011401212</h2>
+    <hr>
+    <br>
+    
+
+    <h2>Pilih gambar yang akan di crop</h2>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png">
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
